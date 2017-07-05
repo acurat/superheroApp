@@ -9,8 +9,6 @@ const Home = StackNavigator({
     Detail: {
         screen: CharacterDetail,
     },
-}, {
-    headerMode: 'none'
 });
 
 export default Home;

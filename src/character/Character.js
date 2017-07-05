@@ -5,6 +5,7 @@ import {
     Image,
     View,
     StyleSheet,
+    StatusBar,
     Text,
     TouchableHighlight,
 } from 'react-native';
@@ -42,6 +43,7 @@ const style = StyleSheet.create({
 
 
 const Character = ({
+                       id,
                        name,
                        comics,
                        series,
@@ -50,6 +52,7 @@ const Character = ({
                        portrait,
                        navigation
                    }: {
+    id: number,
     name: string,
     comics: number,
     series: number,
@@ -58,29 +61,31 @@ const Character = ({
     portrait: string,
     navigation: Object
 }) => (
-    <TouchableHighlight onPress={() => navigation.navigate('Detail', {id: 4})}>
-        <View style={style.container}>
-            <Image style={{width: 150, height: 150}} source={{uri: landscape}}>
-            </Image>
-            <View style={style.characterSummary}>
-                <Text style={style.characterName}> {name} </Text>
-                <View>
-                    <Text style={style.characterHeader}> Comics:
-                        <Text style={style.characterData}> {comics} </Text>
-                    </Text>
+    <View>
+        <StatusBar barStyle="light-content"/>
+        <TouchableHighlight onPress={() => navigation.navigate('Detail', {id: id})}>
+            <View style={style.container}>
+                <Image style={{width: 150, height: 150}} source={{uri: landscape}}>
+                </Image>
+                <View style={style.characterSummary}>
+                    <Text style={style.characterName}> {name} </Text>
+                    <View>
+                        <Text style={style.characterHeader}> Comics:
+                            <Text style={style.characterData}> {comics} </Text>
+                        </Text>
 
-                    <Text style={style.characterHeader}> Series:
-                        <Text style={style.characterData}> {series} </Text>
-                    </Text>
+                        <Text style={style.characterHeader}> Series:
+                            <Text style={style.characterData}> {series} </Text>
+                        </Text>
 
-                    <Text style={style.characterHeader}> Stories:
-                        <Text style={style.characterData}> {stories} </Text>
-                    </Text>
+                        <Text style={style.characterHeader}> Stories:
+                            <Text style={style.characterData}> {stories} </Text>
+                        </Text>
+                    </View>
                 </View>
             </View>
-        </View>
-
-    </TouchableHighlight>
+        </TouchableHighlight>
+    </View>
 );
 
 export default Character;

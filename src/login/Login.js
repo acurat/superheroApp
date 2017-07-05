@@ -8,7 +8,7 @@ import {
     View,
 } from 'react-native';
 
-import { NavigationActions } from 'react-navigation';
+import {NavigationActions} from 'react-navigation';
 
 export default class Login extends Component {
 
@@ -26,16 +26,14 @@ export default class Login extends Component {
                 <StatusBar
                     barStyle="light-content"
                 />
-
                 <TouchableHighlight onPress={() => this.onPressHandler()}>
-                    <Image style={style.marvelLogo}
-                           source={require('../../images/MarvelLogo.svg.png')}/>
-                </TouchableHighlight>
-
-                <TouchableHighlight onPress={() => this.onPressHandler()}>
-                    <Text style={style.homeMessage}>
-                        Tap to continue
-                    </Text>
+                    <View style={style.logoContainer}>
+                        <Image style={style.marvelLogo}
+                               source={require('../../images/MarvelLogo.svg.png')}/>
+                        <Text style={style.homeMessage}>
+                            Tap to continue
+                        </Text>
+                    </View>
                 </TouchableHighlight>
 
             </View>
@@ -46,7 +44,7 @@ export default class Login extends Component {
 const navigateToCharacters = NavigationActions.reset({
     index: 0,
     actions: [
-        NavigationActions.navigate({ routeName: 'Home' })
+        NavigationActions.navigate({routeName: 'Home'})
     ]
 });
 
@@ -58,6 +56,11 @@ const style = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#000',
+    },
+
+    logoContainer: {
+        justifyContent: 'center',
+        alignItems: 'center',
     },
 
     marvelLogo: {

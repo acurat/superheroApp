@@ -12,7 +12,7 @@ import Divider from "./Divider";
 export default class CharacterList extends Component {
 
     static navigationOptions = {
-        headerTitle: 'Heros',
+        headerTitle: 'All Heros',
         headerStyle: {
             backgroundColor: '#000'
         },
@@ -25,9 +25,7 @@ export default class CharacterList extends Component {
         const data = characters.all();
         return (
             <View>
-                <StatusBar
-                    barStyle="light-content"
-                />
+                <StatusBar barStyle="light-content"/>
                 <FlatList
                     data={data}
                     ItemSeparatorComponent={Divider}
