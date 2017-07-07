@@ -1,18 +1,20 @@
-import React, {Component} from 'react';
-import Login from "./login/Login";
+import React, { Component } from 'react';
+import Login from './login/Login';
 import { StackNavigator } from 'react-navigation';
-import Home from "./home/Home";
+import Home from './home/Home';
 
-
-const MarvelApp = StackNavigator({
+const MarvelApp = StackNavigator(
+  {
     Login: {
-        screen: Login,
+      screen: Login,
     },
     Home: {
-        screen: Home,
+      screen: Home,
     },
-}, {
-    headerMode: 'none'
-});
+  },
+  {
+    headerMode: 'none',
+  },
+);
 
 export default MarvelApp;
